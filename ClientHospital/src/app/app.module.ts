@@ -7,9 +7,11 @@ import { DoctorsComponent } from './doctors/doctors.component';
 import { PatientComponent } from './patient/patient.component';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
+import { FormRecordComponent } from './form-record/form-record.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSelectModule, MatFormFieldModule, MatInputModule, MatDatepickerModule } from '@angular/material';
+import { MatSelectModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import {MatButtonModule} from '@angular/material/button';
 
 const appRoutes: Routes = [
   {path: 'doctor', component: DoctorsComponent},
@@ -23,7 +25,8 @@ const appRoutes: Routes = [
     AppComponent,
     DoctorsComponent,
     PatientComponent,
-    MainComponent
+    MainComponent,
+    FormRecordComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,8 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatInputModule,
     MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
     RouterModule.forRoot(
       appRoutes, {enableTracing: true}
     ),
