@@ -1,10 +1,10 @@
 <div class="form-record">
     <div class="form-record-header">Sign up for an appointment with the doctor</div>
     <mat-form-field class="form-record-field">
-        <input matInput placeholder="Input">
+        <input matInput placeholder="Input your Full Name">
     </mat-form-field>
     <mat-form-field class="form-record-field">
-        <mat-select placeholder="Select">
+        <mat-select placeholder="Select Doctor">
             <mat-option value="Doctor1">Doctor1</mat-option>
             <mat-option value="Doctor2">Doctor2</mat-option>
             <mat-option value="Doctor3">Doctor3</mat-option>
@@ -13,7 +13,7 @@
         </mat-select>
     </mat-form-field>
     <mat-form-field class="form-record-field">
-        <input matInput [matDatepicker]="picker" placeholder="Input & change events"
+        <input matInput [matDatepicker]="picker" placeholder="Pick Date"
             (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)"
             [matDatepickerFilter]="myFilter">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>

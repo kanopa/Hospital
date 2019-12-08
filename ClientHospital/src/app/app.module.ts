@@ -11,7 +11,12 @@ import { FormRecordComponent } from './form-record/form-record.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSelectModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
+import { MatSelectModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatTableModule } from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
 import { DoctorComponent } from './doctor/doctor.component';
 
@@ -43,6 +48,7 @@ const appRoutes: Routes = [
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonModule,
+    MatTableModule,
     RouterModule.forRoot(
       appRoutes, {enableTracing: true}
     ),

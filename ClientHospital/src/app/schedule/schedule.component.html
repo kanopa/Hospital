@@ -1,1 +1,32 @@
-<p>schedule works!</p>
+<div class="wrapper-schedule">
+    <div class="form-record">
+        <div class="form-record-header">Sign up for an appointment with the doctor</div>
+        <mat-form-field class="form-record-field">
+            <mat-select placeholder="Select Doctor">
+                <mat-option value="Doctor1">Doctor1</mat-option>
+                <mat-option value="Doctor2">Doctor2</mat-option>
+                <mat-option value="Doctor3">Doctor3</mat-option>
+                <mat-option value="Doctor4">Doctor4</mat-option>
+                <mat-option value="Doctor5">Doctor5</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div class="schedule-doctor">
+            <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+                <ng-container matColumnDef="IdDoctor">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Id Doctor</th>
+                    <td mat-cell *matCellDef="let element"> {{element.IdDoctor}} </td>
+                </ng-container>
+                <ng-container matColumnDef="StartAppointment">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Start Appointment</th>
+                    <td mat-cell *matCellDef="let element"> {{element.StartAppointment}} </td>
+                </ng-container>
+                <ng-container matColumnDef="EndAppointment">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>End Appointment</th>
+                    <td mat-cell *matCellDef="let element"> {{element.EndAppointment}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </div>
+</div>
