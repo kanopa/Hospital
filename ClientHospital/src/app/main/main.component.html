@@ -1,0 +1,66 @@
+<div class="wrapper-main">
+    <div class="wrapper-content">
+        <div class="info-main">
+            <h2>Actual Content of our hospital</h2>
+        </div>
+        <div class="carousel-bar">
+            <ngb-carousel *ngIf="images">
+                <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                        <img [src]="images[0]" alt="Random first slide">
+                    </div>
+                    <div class="carousel-caption">
+                        <h3>Many areas</h3>
+                    </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                        <img [src]="images[1]" alt="Random second slide">
+                    </div>
+                    <div class="carousel-caption">
+                        <h3>Good doctors</h3>
+                    </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                        <img [src]="images[2]" alt="Random third slide">
+                    </div>
+                    <div class="carousel-caption">
+                        <h3>Qualified staff</h3>
+                    </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                        <img [src]="images[3]" alt="Random third slide">
+                    </div>
+                    <div class="carousel-caption">
+                        <h3>New equipment</h3>
+                    </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                        <img [src]="images[4]" alt="Random third slide">
+                    </div>
+                    <div class="carousel-caption">
+                        <h3>Newest technologies</h3>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+        <div class="form-record">
+            <div class="form-record-header">Sign up for an appointment with the doctor</div>
+            <mat-form-field class="form-record-field">
+                <input matInput placeholder="Input">
+            </mat-form-field>
+            <mat-form-field class="form-record-field">
+                <mat-select placeholder="Select">
+                    <mat-option value="Doctor1">Doctor1</mat-option>
+                    <mat-option value="Doctor2">Doctor2</mat-option>
+                    <mat-option value="Doctor3">Doctor3</mat-option>
+                    <mat-option value="Doctor4">Doctor4</mat-option>
+                    <mat-option value="Doctor5">Doctor5</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</div>
