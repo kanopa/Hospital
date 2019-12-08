@@ -8,15 +8,18 @@ import { PatientComponent } from './patient/patient.component';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { FormRecordComponent } from './form-record/form-record.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
+import { DoctorComponent } from './doctor/doctor.component';
 
 const appRoutes: Routes = [
   {path: 'doctor', component: DoctorsComponent},
   {path: 'patient', component: PatientComponent},
   {path: 'main', component: MainComponent},
+  {path: 'schedule', component: ScheduleComponent},
   {path: '', redirectTo: '/main', pathMatch: 'full'}
 ];
 
@@ -26,7 +29,9 @@ const appRoutes: Routes = [
     DoctorsComponent,
     PatientComponent,
     MainComponent,
-    FormRecordComponent
+    FormRecordComponent,
+    DoctorComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
