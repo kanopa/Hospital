@@ -6,8 +6,11 @@ namespace Dal.models
 {
     public class RegistryHospital
     {
-        public int Id_Patient { get; set; }
-        public int Id_Doctor { get; set; }
-        public int Id_Card { get; set; }
+        public int PatientId { get; set; }
+        public Patient Patient { get; set; }
+        public int DoctorId { get; set; }
+        public Doctor Doctor { get; set; }
+        public int CardId { get; set; }
+        public Patient_Card Card { get; set; }
     }
 }

@@ -13,9 +13,28 @@ namespace Dal.context
         public DbSet<Patient_Card> Patient_Cards { get; set; }
         public DbSet<RegistryHospital> RegistryHospitals { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
-        public HospitalContext(DbContextOptions <HospitalContext> options) : base(options)
+        public HospitalContext(DbContextOptions<HospitalContext> options) : base(options)
         {
 
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<RegistryHospital>().HasKey(x => new { x.CardId, x.DoctorId, x.PatientId });
+            modelBuilder.Entity<RegistryHospital>()
+                .HasOne(x => x.Patient)
+                .WithMany(x => x.RegistryHospitals)
+                .HasForeignKey(x => x.PatientId)
+                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<RegistryHospital>()
+                .HasOne(x => x.Doctor)
+                .WithMany(x => x.RegistryHospitals)
+                .HasForeignKey(x => x.DoctorId)
+                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<RegistryHospital>()
+                .HasOne(x => x.Card)
+                .WithMany(x => x.RegistryHospitals)
+                .HasForeignKey(x => x.CardId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

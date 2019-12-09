@@ -48,3 +48,9 @@ C:\Users\Дима\source\repos\Hospital\Hospital\obj\Debug\netcoreapp3.0\Hospita
 C:\Users\Дима\source\repos\Hospital\Hospital\obj\Debug\netcoreapp3.0\Hospital.csproj.CopyComplete
 C:\Users\Дима\source\repos\Hospital\Hospital\obj\Debug\netcoreapp3.0\Hospital.dll
 C:\Users\Дима\source\repos\Hospital\Hospital\obj\Debug\netcoreapp3.0\Hospital.pdb
+C:\Users\Дима\source\repos\Hospital\Hospital\bin\Debug\netcoreapp3.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Дима\source\repos\Hospital\Hospital\bin\Debug\netcoreapp3.0\Microsoft.Bcl.HashCode.dll
+C:\Users\Дима\source\repos\Hospital\Hospital\bin\Debug\netcoreapp3.0\System.Collections.Immutable.dll
+C:\Users\Дима\source\repos\Hospital\Hospital\bin\Debug\netcoreapp3.0\System.ComponentModel.Annotations.dll
+C:\Users\Дима\source\repos\Hospital\Hospital\bin\Debug\netcoreapp3.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Дима\source\repos\Hospital\Hospital\bin\Debug\netcoreapp3.0\System.Runtime.CompilerServices.Unsafe.dll

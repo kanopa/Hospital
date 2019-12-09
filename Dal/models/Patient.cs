@@ -6,8 +6,10 @@ namespace Dal.models
 {
     public class Patient
     {
-        public int Id_Patient { get; set; }
+        public int Id { get; set; }
         public string Full_Name { get; set; }
-        public DateTime Appointment { get; set; }
+        public DateTime Start_Appointment { get; set; }
+        public DateTime End_Appointment { get; set; }
+        public ICollection<RegistryHospital> RegistryHospitals { get; set; }
     }
 }
