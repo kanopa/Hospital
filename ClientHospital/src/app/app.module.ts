@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DoctorsComponent } from './doctors/doctors.component';
+import { DoctorsComponent, DoctorCardDialog } from './doctors/doctors.component';
 import { PatientComponent } from './patient/patient.component';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
@@ -16,9 +16,11 @@ import { MatSelectModule,
   MatInputModule,
   MatDatepickerModule,
   MatNativeDateModule,
+  MatDialogModule,
   MatTableModule } from '@angular/material';
-import {MatButtonModule} from '@angular/material/button';
-import { DoctorComponent } from './doctor/doctor.component';
+import { MatButtonModule } from '@angular/material/button';
+import { DoctorComponent, DoctorDeleteDialog } from './doctor/doctor.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: 'doctor', component: DoctorsComponent},
@@ -36,7 +38,9 @@ const appRoutes: Routes = [
     MainComponent,
     FormRecordComponent,
     DoctorComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    DoctorDeleteDialog,
+    DoctorCardDialog
   ],
   imports: [
     BrowserModule,
@@ -49,11 +53,14 @@ const appRoutes: Routes = [
     MatNativeDateModule,
     MatButtonModule,
     MatTableModule,
+    FormsModule,
+    MatDialogModule,
     RouterModule.forRoot(
       appRoutes, {enableTracing: true}
     ),
     BrowserAnimationsModule
   ],
+  entryComponents: [DoctorDeleteDialog, DoctorCardDialog],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,8 +1,10 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { PatientService } from '../services/PatientService';
+import { Patient} from '../models/Patient';
 
 @NgModule({
-  imports: [MatDatepickerInputEvent]
+  imports: [MatDatepickerInputEvent, PatientService]
 })
 
 @Component({
@@ -13,11 +15,13 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 export class FormRecordComponent implements OnInit {
 
   events: string[] = [];
+  fullname: string;
   constructor() { }
-
   ngOnInit() {
   }
-
+  aaaa() {
+    console.log(this.fullname);
+  }
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     this.events.push(`${type}: ${event.value}`);
     console.log(event.value);

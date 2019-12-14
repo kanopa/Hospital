@@ -9,6 +9,5 @@ namespace Dal.models
         public int Id { get; set; }
         public string Full_Name { get; set; }
         public string Doctor_Position { get; set; }
-        public ICollection<RegistryHospital> RegistryHospitals { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-doctor',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
-
+  openDialog() {
+    const dialogRef = this.dialog.open(DoctorDeleteDialog);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Dialog res: ${result}');
+    });
+  }
 }
+@Component({
+  selector: 'app-doctor-delete',
+  templateUrl: './doctor-delete.html',
+  styleUrls: ['./doctor-delete.sass']
+})
+// tslint:disable-next-line: component-class-suffix
+export class DoctorDeleteDialog {}
