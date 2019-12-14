@@ -1,0 +1,22 @@
+<header>
+  <div class="header-container">
+    <div class="header-image-logo" routerLink="/main" routerLinkActive="active"></div>
+    <p>Hospital Registry # 1</p>
+  </div>
+</header>
+<nav>
+  <ul class="list-nav">
+    <div class="list-element">
+      <li class="list-nav-element" routerLink="/main" routerLinkActive="active">Registry</li>
+      <li class="list-nav-element" routerLink="/doctor" routerLinkActive="active">Doctors</li>
+      <li class="list-nav-element" routerLink="/schedule" routerLinkActive="active">Schedule</li>
+    </div>
+    <div class="list-element">
+      <li class="list-nav-element" routerLink="/patient" routerLinkActive="active">Patient Cabinet</li>
+    </div>
+  </ul>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

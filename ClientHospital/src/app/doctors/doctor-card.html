@@ -1,0 +1,31 @@
+<div class="doctor-card-container">
+    <h2 mat-dialog-title>Add data</h2>
+    <mat-dialog-content class="mat-typography">
+        <h3>Add data to Patient card</h3>
+    </mat-dialog-content>
+    <mat-form-field class="form-record-field">
+        <mat-select placeholder="Select Doctor">
+            <mat-option value="Doctor1">Doctor1</mat-option>
+            <mat-option value="Doctor2">Doctor2</mat-option>
+            <mat-option value="Doctor3">Doctor3</mat-option>
+            <mat-option value="Doctor4">Doctor4</mat-option>
+            <mat-option value="Doctor5">Doctor5</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="form-record-field">
+        <mat-select placeholder="Select Patient">
+            <mat-option value="Doctor1">Patient1</mat-option>
+            <mat-option value="Doctor2">Patient2</mat-option>
+            <mat-option value="Doctor3">Patient3</mat-option>
+            <mat-option value="Doctor4">Patient4</mat-option>
+            <mat-option value="Doctor5">Patient5</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="form-record-field">
+        <input matInput placeholder="Diagnos">
+    </mat-form-field>
+    <mat-dialog-actions align="start">
+        <button mat-button [mat-dialog-close]="true" cdkFocusInitial class="button-delete">Accept</button>
+        <button mat-button mat-dialog-close>Cancel</button>
+    </mat-dialog-actions>
+</div>

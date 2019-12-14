@@ -1,0 +1,31 @@
+<div class="wrapper-doctors">
+    <div class="wrapper-content">
+        <app-form-record></app-form-record>
+        <div class="doctor-card">
+            <div class="header-form-card-doctor">
+                <p>Add data to patient card</p>
+            </div>
+            <div class="open-card-doctor" (click)="openDialog()">
+                <button mat-raised-button class="accept-button">Enter data</button>
+            </div>
+        </div>
+        <div class="doctor-container">
+            <app-doctor></app-doctor>
+            <app-doctor></app-doctor>
+            <app-doctor></app-doctor>
+            <app-doctor></app-doctor>
+            <app-doctor></app-doctor>
+        </div>
+        <div class="form-doctor">
+            <div class="header-form-doctor">
+                <p>Add new doctor</p>
+            </div>
+            <mat-form-field class="form-record-field">
+                <input matInput placeholder="Full name doctor">
+            </mat-form-field>
+            <mat-form-field class="form-record-field">
+                <input matInput placeholder="Position doctor">
+            </mat-form-field>
+        </div>
+    </div>
+</div>

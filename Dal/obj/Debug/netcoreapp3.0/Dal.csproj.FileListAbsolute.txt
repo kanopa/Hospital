@@ -1,0 +1,8 @@
+C:\Users\Дима\source\repos\Hospital\Dal\bin\Debug\netcoreapp3.0\Dal.deps.json
+C:\Users\Дима\source\repos\Hospital\Dal\bin\Debug\netcoreapp3.0\Dal.dll
+C:\Users\Дима\source\repos\Hospital\Dal\obj\Debug\netcoreapp3.0\Dal.csprojAssemblyReference.cache
+C:\Users\Дима\source\repos\Hospital\Dal\obj\Debug\netcoreapp3.0\Dal.AssemblyInfoInputs.cache
+C:\Users\Дима\source\repos\Hospital\Dal\obj\Debug\netcoreapp3.0\Dal.AssemblyInfo.cs
+C:\Users\Дима\source\repos\Hospital\Dal\bin\Debug\netcoreapp3.0\Dal.pdb
+C:\Users\Дима\source\repos\Hospital\Dal\obj\Debug\netcoreapp3.0\Dal.dll
+C:\Users\Дима\source\repos\Hospital\Dal\obj\Debug\netcoreapp3.0\Dal.pdb
