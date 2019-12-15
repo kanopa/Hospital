@@ -10,22 +10,21 @@
             </div>
         </div>
         <div class="doctor-container">
-            <app-doctor></app-doctor>
-            <app-doctor></app-doctor>
-            <app-doctor></app-doctor>
-            <app-doctor></app-doctor>
-            <app-doctor></app-doctor>
+            <app-doctor *ngFor="let doctor of doctors" [doctor]="doctor"></app-doctor>
         </div>
         <div class="form-doctor">
             <div class="header-form-doctor">
                 <p>Add new doctor</p>
             </div>
             <mat-form-field class="form-record-field">
-                <input matInput placeholder="Full name doctor">
+                <input matInput placeholder="Full name doctor" [(ngModel)]="fullName">
             </mat-form-field>
             <mat-form-field class="form-record-field">
-                <input matInput placeholder="Position doctor">
+                <input matInput placeholder="Position doctor" [(ngModel)]="position">
             </mat-form-field>
+            <div class="form-record-field">
+                <button mat-raised-button class="accept-button" (click)="CreateDoc()">Submit</button>
+            </div>
         </div>
     </div>
 </div>

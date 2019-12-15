@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BLL.interfaces;
 
 namespace BLL.services
 {
-    class ScheduleService
+    public class ScheduleService: IScheduleService
     {
     }
 }

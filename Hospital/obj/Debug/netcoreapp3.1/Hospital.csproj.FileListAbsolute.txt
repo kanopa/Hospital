@@ -112,3 +112,5 @@ C:\Users\Дима\source\repos\Hospital\Hospital\bin\Debug\netcoreapp3.1\tr\Micr
 C:\Users\Дима\source\repos\Hospital\Hospital\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Дима\source\repos\Hospital\Hospital\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Дима\source\repos\Hospital\Hospital\obj\Debug\netcoreapp3.1\Hospital.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Дима\source\repos\Hospital\Hospital\bin\Debug\netcoreapp3.1\BLL.dll
+C:\Users\Дима\source\repos\Hospital\Hospital\bin\Debug\netcoreapp3.1\BLL.pdb

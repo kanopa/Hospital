@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Dal.interfaces;
 
 namespace Dal.repositories
 {
-    class PatientRepository
+    public class PatientRepository : IPatientRepository
     {
     }
 }

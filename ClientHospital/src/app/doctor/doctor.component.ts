@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
+import { Doctor } from '../models/Doctor';
+import { DoctorService } from '../services/DoctorService';
 
 @Component({
   selector: 'app-doctor',
@@ -7,15 +9,19 @@ import {MatDialog} from '@angular/material/dialog';
   styleUrls: ['./doctor.component.sass']
 })
 export class DoctorComponent implements OnInit {
-
-  constructor(public dialog: MatDialog) { }
+  @Input() doctor: Doctor;
+  constructor(public dialog: MatDialog,  private doctorService: DoctorService) { }
 
   ngOnInit() {
+    console.log(this.doctor);
   }
   openDialog() {
     const dialogRef = this.dialog.open(DoctorDeleteDialog);
     dialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog res: ${result}');
+      if (result === true) {
+        this.doctorService.DeleteDoctor(this.doctor.id).subscribe(x => x);
+      }
+      console.log(result);
     });
   }
 }

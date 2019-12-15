@@ -4,12 +4,8 @@
         <input matInput placeholder="Input your Full Name" [(ngModel)]="fullname">
     </mat-form-field>
     <mat-form-field class="form-record-field">
-        <mat-select placeholder="Select Doctor">
-            <mat-option value="Doctor1">Doctor1</mat-option>
-            <mat-option value="Doctor2">Doctor2</mat-option>
-            <mat-option value="Doctor3">Doctor3</mat-option>
-            <mat-option value="Doctor4">Doctor4</mat-option>
-            <mat-option value="Doctor5">Doctor5</mat-option>
+        <mat-select placeholder="Select Doctor" >
+            <mat-option [value]="doctor.full_Name" *ngFor="let doctor of doctors">{{doctor.full_Name}}</mat-option>
         </mat-select>
     </mat-form-field>
     <mat-form-field class="form-record-field">

@@ -1,7 +1,8 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { PatientService } from '../services/PatientService';
-import { Patient} from '../models/Patient';
+import { Doctor } from '../models/Doctor';
+import { DoctorService } from '../services/DoctorService';
 
 @NgModule({
   imports: [MatDatepickerInputEvent, PatientService]
@@ -14,10 +15,12 @@ import { Patient} from '../models/Patient';
 })
 export class FormRecordComponent implements OnInit {
 
+  doctors: Doctor[];
   events: string[] = [];
   fullname: string;
-  constructor() { }
+  constructor(private doctorService: DoctorService) { }
   ngOnInit() {
+    this.doctorService.GetAllDoctors().subscribe( x => {this.doctors = x.body; });
   }
   aaaa() {
     console.log(this.fullname);

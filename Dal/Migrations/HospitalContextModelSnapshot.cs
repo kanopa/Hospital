@@ -19,6 +19,72 @@ namespace Dal.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Dal.models.Appointment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("End_Appointment")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PatientId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Start_Appointment")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DoctorId");
+
+                    b.HasIndex("PatientId");
+
+                    b.ToTable("Appointments");
+                });
+
+            modelBuilder.Entity("Dal.models.Card", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("PatientId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cards");
+                });
+
+            modelBuilder.Entity("Dal.models.CardNote", b =>
+                {
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CardId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AppointmentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Diagnos")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("DoctorId", "CardId", "AppointmentId");
+
+                    b.HasIndex("AppointmentId");
+
+                    b.HasIndex("CardId");
+
+                    b.ToTable("CardNotes");
+                });
+
             modelBuilder.Entity("Dal.models.Doctor", b =>
                 {
                     b.Property<int>("Id")
@@ -35,6 +101,32 @@ namespace Dal.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Doctors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Doctor_Position = "Pediatr",
+                            Full_Name = "First Doctor"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Doctor_Position = "Surgeon",
+                            Full_Name = "Second Doctor"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Doctor_Position = "Lor",
+                            Full_Name = "Third Doctor"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Doctor_Position = "Pediatr",
+                            Full_Name = "Fourth Doctor"
+                        });
                 });
 
             modelBuilder.Entity("Dal.models.Patient", b =>
@@ -44,66 +136,18 @@ namespace Dal.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("End_Appointment")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("CardId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Full_Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Start_Appointment")
-                        .HasColumnType("datetime2");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("CardId")
+                        .IsUnique();
 
                     b.ToTable("Patients");
-                });
-
-            modelBuilder.Entity("Dal.models.Patient_Card", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Appointment_Length")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Diagnos")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("DoctorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PatientId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DoctorId");
-
-                    b.HasIndex("PatientId");
-
-                    b.ToTable("Patient_Cards");
-                });
-
-            modelBuilder.Entity("Dal.models.RegistryHospital", b =>
-                {
-                    b.Property<int>("CardId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("DoctorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PatientId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CardId", "DoctorId", "PatientId");
-
-                    b.HasIndex("DoctorId");
-
-                    b.HasIndex("PatientId");
-
-                    b.ToTable("RegistryHospitals");
                 });
 
             modelBuilder.Entity("Dal.models.Schedule", b =>
@@ -129,7 +173,7 @@ namespace Dal.Migrations
                     b.ToTable("Schedules");
                 });
 
-            modelBuilder.Entity("Dal.models.Patient_Card", b =>
+            modelBuilder.Entity("Dal.models.Appointment", b =>
                 {
                     b.HasOne("Dal.models.Doctor", "Doctor")
                         .WithMany()
@@ -144,24 +188,33 @@ namespace Dal.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Dal.models.RegistryHospital", b =>
+            modelBuilder.Entity("Dal.models.CardNote", b =>
                 {
-                    b.HasOne("Dal.models.Patient_Card", "Card")
-                        .WithMany("RegistryHospitals")
+                    b.HasOne("Dal.models.Appointment", "Appointment")
+                        .WithMany("CardNotes")
+                        .HasForeignKey("AppointmentId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Dal.models.Card", "Card")
+                        .WithMany("CardNotes")
                         .HasForeignKey("CardId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Dal.models.Doctor", "Doctor")
-                        .WithMany("RegistryHospitals")
+                        .WithMany("CardNotes")
                         .HasForeignKey("DoctorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+                });
 
-                    b.HasOne("Dal.models.Patient", "Patient")
-                        .WithMany("RegistryHospitals")
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Restrict)
+            modelBuilder.Entity("Dal.models.Patient", b =>
+                {
+                    b.HasOne("Dal.models.Card", "Card")
+                        .WithOne("Patient")
+                        .HasForeignKey("Dal.models.Patient", "CardId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
