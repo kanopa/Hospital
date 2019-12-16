@@ -19,7 +19,8 @@ namespace BLL.services
         }
         public Task<Appointment> AddAppointment(NewAppointment appointment)
         {
-            var Patient = await patientRepository.AddPatient(pa)
+            return null;
+            //var Patient = await patientRepository.AddPatient(pa)
         }
     }
 }

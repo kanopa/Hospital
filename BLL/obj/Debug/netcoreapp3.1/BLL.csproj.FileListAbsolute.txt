@@ -9,3 +9,14 @@ C:\Users\Дима\source\repos\Hospital\BLL\obj\Debug\netcoreapp3.1\BLL.pdb
 C:\Users\Дима\source\repos\Hospital\BLL\bin\Debug\netcoreapp3.1\Dal.dll
 C:\Users\Дима\source\repos\Hospital\BLL\bin\Debug\netcoreapp3.1\Dal.pdb
 C:\Users\Дима\source\repos\Hospital\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CopyComplete
+C:\Users\4akly\Desktop\Dima\Hospital\BLL\obj\Debug\netcoreapp3.1\BLL.csprojAssemblyReference.cache
+C:\Users\4akly\Desktop\Dima\Hospital\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfoInputs.cache
+C:\Users\4akly\Desktop\Dima\Hospital\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfo.cs
+C:\Users\4akly\Desktop\Dima\Hospital\BLL\obj\Debug\netcoreapp3.1\BLL.dll
+C:\Users\4akly\Desktop\Dima\Hospital\BLL\obj\Debug\netcoreapp3.1\BLL.pdb
+C:\Users\4akly\Desktop\Dima\Hospital\BLL\bin\Debug\netcoreapp3.1\BLL.deps.json
+C:\Users\4akly\Desktop\Dima\Hospital\BLL\bin\Debug\netcoreapp3.1\BLL.dll
+C:\Users\4akly\Desktop\Dima\Hospital\BLL\bin\Debug\netcoreapp3.1\BLL.pdb
+C:\Users\4akly\Desktop\Dima\Hospital\BLL\bin\Debug\netcoreapp3.1\Dal.dll
+C:\Users\4akly\Desktop\Dima\Hospital\BLL\bin\Debug\netcoreapp3.1\Dal.pdb
+C:\Users\4akly\Desktop\Dima\Hospital\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CopyComplete

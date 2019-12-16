@@ -8375,24 +8375,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Дима\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\4akly\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Дима\\source\\repos\\Hospital\\Hospital\\Hospital.csproj",
+      "projectUniqueName": "C:\\Users\\4akly\\Desktop\\Dima\\Hospital\\Hospital\\Hospital.csproj",
       "projectName": "Hospital",
-      "projectPath": "C:\\Users\\Дима\\source\\repos\\Hospital\\Hospital\\Hospital.csproj",
-      "packagesPath": "C:\\Users\\Дима\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Дима\\source\\repos\\Hospital\\Hospital\\obj\\",
+      "projectPath": "C:\\Users\\4akly\\Desktop\\Dima\\Hospital\\Hospital\\Hospital.csproj",
+      "packagesPath": "C:\\Users\\4akly\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\4akly\\Desktop\\Dima\\Hospital\\Hospital\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Дима\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\4akly\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -8404,11 +8405,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Дима\\source\\repos\\Hospital\\BLL\\BLL.csproj": {
-              "projectPath": "C:\\Users\\Дима\\source\\repos\\Hospital\\BLL\\BLL.csproj"
+            "C:\\Users\\4akly\\Desktop\\Dima\\Hospital\\BLL\\BLL.csproj": {
+              "projectPath": "C:\\Users\\4akly\\Desktop\\Dima\\Hospital\\BLL\\BLL.csproj"
             },
-            "C:\\Users\\Дима\\source\\repos\\Hospital\\Dal\\Dal.csproj": {
-              "projectPath": "C:\\Users\\Дима\\source\\repos\\Hospital\\Dal\\Dal.csproj"
+            "C:\\Users\\4akly\\Desktop\\Dima\\Hospital\\Dal\\Dal.csproj": {
+              "projectPath": "C:\\Users\\4akly\\Desktop\\Dima\\Hospital\\Dal\\Dal.csproj"
             }
           }
         }
