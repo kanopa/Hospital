@@ -17,10 +17,26 @@ namespace BLL.services
             this.appointmentRepository = appointmentRepository;
             this.patientRepository = patientRepository;
         }
-        public Task<Appointment> AddAppointment(NewAppointment appointment)
+        public async Task<Appointment> AddAppointment(NewAppointment appointment)
         {
-            return null;
-            //var Patient = await patientRepository.AddPatient(pa)
+            var pat = await this.patientRepository.GetByName(appointment.Full_Name);
+            if(pat == null)
+            {
+                var newPat = new Patient()
+                {
+                    Full_Name = appointment.Full_Name,
+                    Card = new Card()
+                };
+                pat = await patientRepository.AddPatient(newPat);
+            }
+            var app = new Appointment()
+            {
+                PatientId = pat.Id,
+                DoctorId = appointment.Id_Doctor,
+                End_Appointment = appointment.End_Appointment,
+                Start_Appointment = appointment.Start_Appointment
+            };
+            return await this.appointmentRepository.AddAppointment(app);
         }
     }
 }

@@ -1,13 +1,14 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
-import { PatientService } from '../services/AppointmentService';
+import { AppointmentService} from '../services/AppointmentService';
 import { Doctor } from '../models/Doctor';
 import { DoctorService } from '../services/DoctorService';
+import { NewAppointment } from '../models/Appointment';
 
 declare var $: any;
 
 @NgModule({
-  imports: [MatDatepickerInputEvent, PatientService]
+  imports: [MatDatepickerInputEvent, AppointmentService]
 })
 
 @Component({
@@ -20,14 +21,45 @@ export class FormRecordComponent implements OnInit {
   doctors: Doctor[];
   events: string[] = [];
   fullname: string;
-  constructor(private doctorService: DoctorService) { }
+  firstDate: Date;
+  secondDate: Date;
+  doctorId: number;
+  constructor(private doctorService: DoctorService, private appointmentService: AppointmentService) { }
+
+  First(date) {
+    this.firstDate = date;
+  }
+  Second(date) {
+    this.secondDate = date;
+  }
+  changeClient($event) {
+    this.doctorId = $event;
+  }
   ngOnInit() {
     this.doctorService.GetAllDoctors().subscribe( x => {this.doctors = x.body; });
-    $('#example1').calendar();
-    $('#example2').calendar();
+    $('#example1').calendar({
+      popupOptions: {
+        observeChanges: false
+      },
+      type: 'date',
+      onChange: (date, text) => this.First(date),
+    });
+    $('#example2').calendar({
+      popupOptions: {
+        observeChanges: false
+      },
+      type: 'date',
+      onChange: (date, text) => this.Second(date),
+    });
   }
   aaaa() {
-    console.log(this.fullname);
+    const appoint: NewAppointment = {
+      full_Name: this.fullname,
+      id_Doctor: this.doctorId,
+      start_Appointment: this.firstDate,
+      end_Appointment: this.secondDate
+    };
+    this.appointmentService.CreateAppointment(appoint).subscribe(x => console.log(x));
   }
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     this.events.push(`${type}: ${event.value}`);

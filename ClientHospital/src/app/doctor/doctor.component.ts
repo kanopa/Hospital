@@ -13,7 +13,7 @@ export class DoctorComponent implements OnInit {
   constructor(public dialog: MatDialog,  private doctorService: DoctorService) { }
 
   ngOnInit() {
-    console.log(this.doctor);
+
   }
   openDialog() {
     const dialogRef = this.dialog.open(DoctorDeleteDialog);
@@ -21,7 +21,7 @@ export class DoctorComponent implements OnInit {
       if (result === true) {
         this.doctorService.DeleteDoctor(this.doctor.id).subscribe(x => x);
       }
-      console.log(result);
+
     });
   }
 }

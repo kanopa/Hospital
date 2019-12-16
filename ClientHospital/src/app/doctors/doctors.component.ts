@@ -17,12 +17,12 @@ export class DoctorsComponent implements OnInit {
   constructor(public dialog: MatDialog, private doctorService: DoctorService) { }
 
   ngOnInit() {
-    this.doctorService.GetAllDoctors().subscribe(x => {this.doctors = x.body; console.log(this.doctors); });
+    this.doctorService.GetAllDoctors().subscribe(x => {this.doctors = x.body;  });
   }
   openDialog() {
     const dialogRef = this.dialog.open(DoctorCardDialog);
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+
     });
   }
   CreateDoc() {

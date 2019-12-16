@@ -12,6 +12,10 @@ namespace Dal.repositories
     {
         private readonly HospitalContext db;
 
+        public AppointmentRepository(HospitalContext db)
+        {
+            this.db = db;
+        }
         public async Task<Appointment> AddAppointment(Appointment appointment)
         {
             var newAppointment = await db.Appointments.AddAsync(appointment);

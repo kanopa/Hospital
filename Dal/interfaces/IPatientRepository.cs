@@ -9,5 +9,6 @@ namespace Dal.interfaces
     public interface IPatientRepository
     {
         Task<Patient> AddPatient(Patient patient);
+        Task<Patient> GetByName(string name);
     }
 }
