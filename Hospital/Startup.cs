@@ -39,7 +39,7 @@ namespace Hospital
                        .WithOrigins("http://localhost:4200");
             }));
             string connectionString = Configuration["ConnectionStrings:ConnectionLocal"];
-
+                
             services.AddDbContext<HospitalContext>(options =>
                 options.UseSqlServer(connectionString), ServiceLifetime.Scoped);
             services.AddScoped<IAppointmentRepository, AppointmentRepository>();

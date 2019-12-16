@@ -4,22 +4,22 @@
         <input matInput placeholder="Input your Full Name" [(ngModel)]="fullname">
     </mat-form-field>
     <mat-form-field class="form-record-field">
-        <mat-select placeholder="Select Doctor" >
+        <mat-select placeholder="Select Doctor">
             <mat-option [value]="doctor.full_Name" *ngFor="let doctor of doctors">{{doctor.full_Name}}</mat-option>
         </mat-select>
     </mat-form-field>
-    <mat-form-field class="form-record-field">
-        <input matInput [matDatepicker]="picker" placeholder="Pick start appointment" (dateInput)="addEvent('input', $event)"
-            (dateChange)="addEvent('change', $event)" [matDatepickerFilter]="myFilter">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field class="form-record-field">
-        <input matInput [matDatepicker]="picker2" placeholder="Pick end appointment" (dateInput)="addEvent('input', $event)"
-            (dateChange)="addEvent('change', $event)" [matDatepickerFilter]="myFilter">
-        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-        <mat-datepicker #picker2></mat-datepicker>
-    </mat-form-field>
+    <div class="ui calendar" id="example1">
+        <div class="ui input left icon form-record-field">
+            <i class="calendar icon"></i>
+            <input type="text" placeholder="Pick first date">
+        </div>
+    </div>
+    <div class="ui calendar" id="example2">
+        <div class="ui input left icon form-record-field">
+            <i class="calendar icon"></i>
+            <input type="text" placeholder="Pick second date">
+        </div>
+    </div>
     <div class="form-record-field">
         <button mat-raised-button class="accept-button" (click)="aaaa()">Submit</button>
     </div>
