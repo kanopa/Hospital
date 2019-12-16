@@ -26,4 +26,8 @@ export class AppointmentService {
         return this.http.get<NewAppointment[]>(this.baseUrl + this.routeAppointment,
         {observe: 'response', headers: this.headers, params: httpParams});
     }
+    GetAppointmentById(id: number, httpParams?: any) {
+        return this.http.get<NewAppointment[]>(this.baseUrl + this.routeAppointment + `/${id}`,
+        {observe: 'response', headers: this.headers, params: httpParams});
+    }
 }

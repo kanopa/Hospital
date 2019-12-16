@@ -9,5 +9,7 @@ namespace BLL.interfaces
     public interface IAppointmentService
     {
         Task<Appointment> AddAppointment(NewAppointment appointment);
+        Task<List<Appointment>> GetAll();
+        Task<List<Appointment>> GetById(int id);
     }
 }

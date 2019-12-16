@@ -41,21 +41,24 @@ export class FormRecordComponent implements OnInit {
       popupOptions: {
         observeChanges: false
       },
-      type: 'date',
       onChange: (date, text) => this.First(date),
+      isDisabled: (date, mode) => {
+        console.log(date);
+        return false;
+      },
     });
     $('#example2').calendar({
       popupOptions: {
         observeChanges: false
       },
-      type: 'date',
       onChange: (date, text) => this.Second(date),
+      isDisabled : (date, mode) => false,
     });
   }
   aaaa() {
     const appoint: NewAppointment = {
       full_Name: this.fullname,
-      id_Doctor: this.doctorId,
+      doctorId: this.doctorId,
       start_Appointment: this.firstDate,
       end_Appointment: this.secondDate
     };

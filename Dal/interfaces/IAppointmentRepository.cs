@@ -9,5 +9,7 @@ namespace Dal.interfaces
     public interface IAppointmentRepository
     {
         Task<Appointment> AddAppointment(Appointment appointment);
+        Task<List<Appointment>> GetAll();
+        Task<List<Appointment>> GetById(int id);
     }
 }
