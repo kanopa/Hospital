@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Dal.interfaces
+namespace BLL.interfaces
 {
-    public interface IScheduleRepository
+    public interface ICardService
     {
     }
 }

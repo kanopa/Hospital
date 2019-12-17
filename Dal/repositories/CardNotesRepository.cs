@@ -5,7 +5,7 @@ using Dal.interfaces;
 
 namespace Dal.repositories
 {
-    public class ScheduleRepository: IScheduleRepository
+    public class CardNotesRepository : ICardNotesRepository
     {
     }
 }

@@ -21,6 +21,7 @@ import { MatSelectModule,
 import { MatButtonModule } from '@angular/material/button';
 import { DoctorComponent, DoctorDeleteDialog } from './doctor/doctor.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
   {path: 'doctor', component: DoctorsComponent},
@@ -55,6 +56,7 @@ const appRoutes: Routes = [
     MatTableModule,
     FormsModule,
     MatDialogModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes, {enableTracing: true}
     ),

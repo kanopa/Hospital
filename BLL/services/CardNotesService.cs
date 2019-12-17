@@ -5,7 +5,7 @@ using BLL.interfaces;
 
 namespace BLL.services
 {
-    public class ScheduleService: IScheduleService
+    public class CardNotesService: ICardNotesService
     {
     }
 }

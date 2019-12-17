@@ -4,12 +4,11 @@ using System.Text;
 
 namespace Dal.models
 {
-    public class Doctor
+    public class Card
     {
         public int Id { get; set; }
-        public string Full_Name { get; set; }
-        public string Doctor_Position { get; set; }
+        public int PatientId { get; set; }
+        public Patient Patient { get; set; }
         public ICollection<CardNote> CardNotes { get; set; }
-
     }
 }

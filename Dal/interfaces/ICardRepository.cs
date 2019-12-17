@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Dal.interfaces
 {
-    public interface IPatientRepository
+    public interface ICardRepository
     {
-        Task<Patient> AddPatient(Patient patient);
-        Task<Patient> GetByName(string name);
+        Task<Card> AddCard(Card card);
     }
 }

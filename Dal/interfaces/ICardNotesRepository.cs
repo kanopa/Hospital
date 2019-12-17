@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Dal.interfaces
 {
-    public interface IScheduleRepository
+    public interface ICardNotesRepository
     {
     }
 }
