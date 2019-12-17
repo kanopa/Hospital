@@ -24,9 +24,14 @@ namespace Hospital.Controllers
             return await appointmentService.AddAppointment(appointment);
         }
         [HttpGet]
-        public  async Task<Appointment> GetAppointment(Appointment appointment)
+        public  async Task<List<Appointment>> GetAppointment()
         {
-            return null;
+            return await appointmentService.GetAll();
+        }
+        [HttpGet("{id}")]
+        public async Task<List<Appointment>> GetById(int id)
+        {
+            return await appointmentService.GetById(id);
         }
     }
 }

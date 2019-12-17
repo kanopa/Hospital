@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Dal.context;
 using Dal.interfaces;
 using Dal.models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dal.repositories
 {
@@ -21,6 +22,10 @@ namespace Dal.repositories
 
             await db.SaveChangesAsync();
             return newPatient.Entity;
+        }
+        public async Task<Patient> GetByName(string name)
+        {
+            return await db.Patients.FirstOrDefaultAsync(x=> x.Full_Name == name);
         }
     }
 }
